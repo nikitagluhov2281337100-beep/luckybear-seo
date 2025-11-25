@@ -1,7 +1,7 @@
 User-agent: *
 Allow: /
-Host: www.luckybearcasino.site
-Sitemap: https://www.luckybearcasino.ru/sitemap.xml
+Host: www.lakibir.site
+Sitemap: https://lakibir.site/sitemap.xml
 
 User-agent: AhrefsBot
 Disallow: /
