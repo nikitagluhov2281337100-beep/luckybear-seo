@@ -24,6 +24,7 @@
 <link rel="preload" as="image" href="https://luckybeargames.ru/icons/box1.png">
 <link rel="preload" as="image" href="https://luckybeargames.ru/icons/box2.png">
 
+<link rel="preload" as="font" href="fonts/BenzinBold.ttf" type="font/ttf" crossorigin>
 <link rel="icon" type="image/png" href="https://playtowerrush.ru/images/logo.png">
 
 <script type="application/ld+json">
@@ -90,6 +91,7 @@
 
 <style>
     * {margin:0;padding:0;box-sizing:border-box;}
+    @font-face{font-family:'Benzin';src:url('fonts/BenzinBold.ttf') format('truetype');font-weight:700;font-style:normal;font-display:swap}
     :root{--bg:#0a1224;--bg-2:#0f1b39;--gold:#3b82f6;--gold-2:#60a5fa;--text:#ffffff;--muted:#b7b7c9;--accent:#64d9ff;--dark:#091021}
     body {
       font-family: 'Montserrat', sans-serif;
@@ -110,16 +112,17 @@
     .nav{position:fixed;top:0;left:0;right:0;display:flex;align-items:center;justify-content:space-between;padding:14px 24px;background:#0b1224;border-bottom:1px solid #0f1b39;z-index:1000}
     .brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--text)}
     .brand-logo{width:42px;height:42px;border-radius:10px;box-shadow:0 0 25px rgba(255,215,0,0.45)}
-    .brand-title{font-weight:800;letter-spacing:.5px}
+    .brand-title{font-family:'Benzin','Montserrat',sans-serif;font-weight:800;letter-spacing:.5px}
     .brand-sub{display:block;font-size:.8rem;color:var(--muted)}
     .nav-links{display:flex;gap:16px;align-items:center}
     .nav-link{color:var(--muted);text-decoration:none;font-weight:600;transition:.2s}
     .nav-link:hover{color:var(--text)}
-    .cta-small{padding:10px 16px;border-radius:22px;background:linear-gradient(45deg,var(--gold),var(--gold-2));color:#081225;font-weight:800;box-shadow:0 8px 24px rgba(59,130,246,0.35)}
+    .cta-small{font-family:'Benzin','Montserrat',sans-serif;padding:10px 16px;border-radius:22px;background:linear-gradient(45deg,var(--gold),var(--gold-2));color:#081225;font-weight:800;box-shadow:0 8px 24px rgba(59,130,246,0.35)}
 
     .container {max-width:1100px;margin:0 auto;padding:110px 20px 40px;text-align:center;}
     .hero-logo{width:140px;height:auto;display:block;margin:0 auto 14px;filter:drop-shadow(0 0 18px rgba(59,130,246,0.35))}
     .logo {
+      font-family:'Benzin','Montserrat',sans-serif;
       font-size:3.2rem;
       font-weight:800;
       background:linear-gradient(90deg,var(--gold),var(--gold-2));
@@ -131,6 +134,7 @@
     @keyframes glow {from{text-shadow:0 0 15px var(--gold);} to{text-shadow:0 0 40px var(--gold-2);}}
     .subtitle {font-size:1.2rem;color:var(--muted);margin:1rem 0 2.2rem;}
     .cta-button {
+      font-family:'Benzin','Montserrat',sans-serif;
       display:inline-block;
       padding:18px 44px;
       margin:15px;
@@ -257,15 +261,16 @@
     .footer{margin:3rem auto 2rem;opacity:.7;font-size:.9rem}
 
     @media(max-width:768px){
-      .logo{font-size:2.4rem;}
+      .logo{font-size:2.2rem;}
       .nav{padding:12px 16px}
       .brand-title{font-size:1rem}
-      .cta-button{display:block;width:100%;margin:15px 0;}
+      .cta-button{display:block;width:100%;margin:12px 0;padding:14px 22px;font-size:1rem}
+      .jackpot-btn{width:100%;padding:16px 22px}
       .strategy-steps{flex-direction:column;}
-      .container{padding:90px 16px 32px}
-      .subtitle{font-size:1rem;margin:0.8rem 0 1.4rem}
-      .cta-button{padding:14px 24px;font-size:1rem}
-      .promo-section{padding:1.2rem}
+      .strategy-box{padding:1.4rem}
+      .container{padding:84px 14px 28px}
+      .subtitle{font-size:1rem;margin:0.8rem 0 1.2rem}
+      .promo-section{padding:1rem;box-shadow:0 6px 18px rgba(0,0,0,0.25)}
       .chest-list{flex-direction:column;gap:12px}
       .chest{min-width:auto}
       .chest-img{width:72px}
@@ -273,21 +278,33 @@
       .nav-link{font-size:.9rem}
       .accordion summary{padding:16px}
       .accordion .content{padding:0 16px 16px}
-      .step{padding:1rem}
+      .step{padding:1.2rem}
       .footer{margin:2rem auto 1.2rem}
       .btns{gap:10px}
-      .phone-wrapper{width:320px}
+      .phone-wrapper{width:340px}
       .phone-glow{width:280px;height:280px;filter:blur(26px)}
     }
     @media(max-width:480px){
-      .logo{font-size:1.9rem}
-      .nav{padding:10px 12px}
+      .logo{font-size:1.8rem}
+      .nav{padding:12px}
       .brand-sub{display:none}
-      .cta-button{padding:12px 20px;font-size:.95rem;margin:10px 0}
+      .cta-button{padding:12px 18px;font-size:.95rem;margin:10px 0}
       .subtitle{font-size:.95rem}
-      .phone-wrapper{width:280px}
+      .phone-wrapper{width:300px}
       .phone-glow{width:240px;height:240px}
+      .popup{padding:1.4rem;border-radius:16px}
+      .popup .timer{font-size:1.2rem}
     }
+    @media(hover:none){
+      .cta-button:hover{transform:none;box-shadow:0 10px 30px rgba(59,130,246,0.45)}
+      .jackpot-btn:hover{transform:none;box-shadow:0 12px 40px rgba(59,130,246,0.55)}
+    }
+    @media(prefers-reduced-motion:reduce){
+      .logo{animation:none}
+      .phone-wrapper{animation:none}
+      .cta-button::before{transition:none}
+    }
+    a,button{touch-action:manipulation}
     .accordion{max-width:1100px;margin:30px auto;color:#ddd}
     .accordion details{background:#15264b;border-radius:12px;margin-bottom:12px;box-shadow:inset 0 0 0 1px #1f3564}
     .accordion summary{cursor:pointer;list-style:none;padding:18px 20px;font-weight:800;color:#fff}
@@ -299,7 +316,7 @@
     .phone-img{width:100%;height:auto;display:block;filter:drop-shadow(0 10px 40px rgba(0,0,0,0.5))}
     .phone-glow{position:absolute;top:12%;left:50%;transform:translateX(-50%);width:380px;height:380px;background:radial-gradient(closest-side, rgba(59,130,246,0.5), rgba(96,165,250,0.28), transparent 70%);filter:blur(30px);z-index:-1;border-radius:50%}
     .phone-cta{max-width:1100px;margin:16px auto;text-align:center}
-    .jackpot-btn{background:linear-gradient(45deg,#2e60d9,#5fa2ff);color:#081225;font-weight:800;letter-spacing:.5px;box-shadow:0 12px 40px rgba(59,130,246,0.55);padding:20px 36px}
+    .jackpot-btn{font-family:'Benzin','Montserrat',sans-serif;background:linear-gradient(45deg,#2e60d9,#5fa2ff);color:#081225;font-weight:800;letter-spacing:.5px;box-shadow:0 12px 40px rgba(59,130,246,0.55);padding:20px 36px}
     .jackpot-btn:hover{transform:scale(1.08);box-shadow:0 18px 55px rgba(59,130,246,0.7)}
     .auth-btn{padding:10px 16px;border-radius:10px;background:linear-gradient(45deg,#2e60d9,#5fa2ff);color:#081225;font-weight:800;text-decoration:none;box-shadow:0 8px 24px rgba(59,130,246,0.35)}
     @keyframes phone-bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
@@ -339,7 +356,7 @@
     <img class="brand-logo" src="logo.png" alt="LuckyBear Casino логотип" title="LuckyBear Casino" width="42" height="42" loading="eager">
     <div>
       <div class="brand-title">LuckyBear Casino</div>
-      <div class="brand-sub">Тавер Раш</div>
+      <div class="brand-sub"></div>
     </div>
   </a>
   <nav class="nav-links" role="navigation" aria-label="Главное меню">
@@ -350,8 +367,8 @@
 
 <main class="container" role="main">
   <img class="hero-logo" src="logo.png" alt="LuckyBear Casino — Тавер Раш логотип" title="LuckyBear Casino — Тавер Раш" width="140" height="140" loading="eager">
-  <h1 class="logo">LUCKYBEAR CASINO × ТАВЕР РАШ</h1>
-  <p class="subtitle">Играй в Тавер Раш на LuckyBear Casino. Лови множители и забирай выигрыши — эксклюзивные бонусы для новых игроков.</p>
+  <h1 class="logo">LUCKYBEAR CASINO </h1>
+  <p class="subtitle">Играй в слоты на Лаки Бир Казино. Лови множители и забирай выигрыши — эксклюзивные бонусы для новых игроков.</p>
 
   <a href="https://lb333.me/5N9mCC" class="cta-button" target="_blank" rel="noopener noreferrer" aria-label="Играть на сайте LuckyBear Casino">🚀 Играть на сайте</a>
   <a href="https://t.me/Lucky_Bear_SpinPro_Bot/app?startapp=bXN0PTB4MTUzOTJmZWI1Jm09TklLSVRPUyZjPVNlb0JvdA_SeoTower" class="cta-button tg-btn" target="_blank" rel="noopener noreferrer" aria-label="Играть в Telegram">📱 Играть в Telegram</a>
